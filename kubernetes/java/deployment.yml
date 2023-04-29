@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-app-back
+  template:
+    metadata:
+      labels:
+        app: weather-app-back
+    spec:
+      containers:
+      - name: weather-app-back
+        image: gonaba/weather-api-aqa-uade
+        ports:
+        - containerPort: 8080
