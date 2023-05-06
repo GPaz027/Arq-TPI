@@ -35,3 +35,17 @@
 4. Pegar el código antes obtenido y darle a aceptar.
 5. Conectarse al clúster desde OpenLens haciéndole clic.
 
+### Despliegue de aplicaciones
+
+* Para desplegar recursos en Kubernetes, primero se debe abrir una terminal (OpenLens tiene una integrada en la parte inferior de su interfaz). Luego hay que dirigirse a donde están los archivos YAML a aplicar (en este caso están dentro de este mismo repositorio, dentro de la carpeta `kubernetes`).
+* Cuando se está en el directorio con los archivos, se utiliza el comando `kubectl apply -f #NOMBRE_ARCHIVO`. Análogamente, el comando `kubectl delete -f #NOMBRE_ARCHIVO` borrará dicho recurso del clúster.
+
+Dicho lo anterior, para desplegar las aplicaciones de Java y React respectivamente:
+1. Aplicar el deployment de la aplicación de Java.
+2. Aplicar el service de la aplicación de Java.
+3. Tomar el DNS del service de Java y copiarlo.
+4. Pegar dicho DNS en el deployment de React donde está indicado con un comentario (añadir '').
+5. Guardar el deployment de React y aplicarlo.
+6. Aplicar el service de React.
+7. Conseguir el DNS del service de React.
+8. Tras unos minutos, ingresar a ese DNS y debería poder visualizar la aplicación, funcionando ya con su API.  
