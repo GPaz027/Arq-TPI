@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: weather-app-back
-        image: gonaba/weather-api-aqa-uade
+        image: gonaba/weather-api-aqa-uade-v2
         ports:
         - containerPort: 8080

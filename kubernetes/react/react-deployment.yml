@@ -19,4 +19,4 @@ spec:
         - containerPort: 3000
         env:
         - name: REACT_APP_BACK_URL
-          value: ""
+          value: # Backend DNS
