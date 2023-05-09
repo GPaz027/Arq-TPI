@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "default"
+  profile = "test"
   region  = var.region
 }
 
@@ -231,7 +231,7 @@ resource "aws_security_group_rule" "control_plane_outbound" {
 resource "aws_eks_cluster" "this" {
   name     = "${var.project}-cluster"
   role_arn = "arn:aws:iam::285542564450:role/LabRole"
-  version  = "1.21"
+  version  = "1.23"
 
   vpc_config {
     subnet_ids              = flatten([aws_subnet.public[*].id, aws_subnet.private[*].id])
